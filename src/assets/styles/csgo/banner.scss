@@ -1,0 +1,160 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: 537px;
+    background: url(@/assets/images/csgoCab/bg.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    .contentwarp {
+      position: absolute;
+      width: 1920px;
+      height: 537px;
+      background: url(@/assets/images/csgoCab/bg1.png) no-repeat;
+      background-size: cover;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .bannerul {
+        width: 1000px;
+        height: 450px;
+        top: 89px;
+        left: 496px;
+        position: absolute;
+
+        .bigbanner {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          cursor: pointer;
+
+          li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all linear 0.4s;
+            width: 100%;
+            height: 100%;
+          }
+
+          .activeimg {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .bannertitle {
+          width: 225px;
+          height: 318px;
+          position: absolute;
+          top: 70px;
+          right: -79px;
+
+          ul {
+            width: 100%;
+            height: 100%;
+          }
+
+          li {
+            width: 225px;
+            height: 78px;
+            background: url(@/assets/images/csgoCab/top-swiper-title-new.png) no-repeat;
+            background-size: cover;
+            transition: all linear 0.1s;
+            margin-bottom: 2px;
+            cursor: pointer;
+            align-items: center;
+            display: flex;
+
+            &:hover {
+              background: url(@/assets/images/csgoCab/top-swiper-title2-new.png) no-repeat;
+              background-size: cover;
+            }
+
+            .lefttitle {
+              width: 78px;
+              height: 78px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .righttitle {
+              font-size: 12px;
+              line-height: 18px;
+              font-family: PingFang;
+              font-weight: 300;
+              color: rgba(237, 236, 236, 0.9);
+            }
+          }
+
+          .activetitle {
+            background: url(@/assets/images/csgoCab/top-swiper-title2-new1.png) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+
+      .titleimg {
+        position: absolute;
+        width: 297px;
+        height: 108px;
+        background: url(@/assets/images/csgoCab/title-img.png) no-repeat;
+        background-size: contain;
+        top: 195px;
+        left: 347px;
+      }
+
+      .newdown {
+        position: absolute;
+        width: 217px;
+        height: 50px;
+        background: url(@/assets/images/csgoCab/down.png) no-repeat;
+        background-size: cover;
+        top: 329px;
+        left: 347px;
+        font-family: PingFang;
+        font-weight: 700;
+        color: #fff;
+        font-size: 18px;
+        transition: all linear 0.3s;
+
+        &:hover {
+          background: url(@/assets/images/csgoCab/down1.png) no-repeat;
+          background-size: cover;
+        }
+
+        p {
+          height: 18px;
+          line-height: 18px;
+          margin: 7px 0 3px;
+          text-align: center;
+        }
+
+        span {
+          text-align: center;
+          font-size: 12px;
+          font-family: PingFang;
+          color: #fff;
+          height: 12px;
+          line-height: 12px;
+          display: block;
+          font-weight: 400;
+        }
+      }
+
+      .update {
+        position: absolute;
+        left: 347px;
+        top: 399px;
+        color: #5192ff;
+        line-height: 20px;
+        font-size: 12px;
+        font-family: PingFang;
+        font-weight: 400;
+        text-decoration: underline;
+      }
+    }
+  }

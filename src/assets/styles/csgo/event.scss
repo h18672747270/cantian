@@ -1,0 +1,491 @@
+.eventrelated {
+    display: flex;
+    justify-content: space-between;
+    width: 1404px;
+    margin-bottom: 72px;
+
+    .commtitle {
+        height: 32px;
+        width: 100%;
+        padding-right: 4px;
+        margin-bottom: 26px;
+        display: flex;
+        justify-content: space-between;
+
+        .titleleft {
+            display: flex;
+            align-items: center;
+
+            .titleicon {
+                width: 7px;
+                height: 28px;
+                background: #347AF0;
+            }
+
+            .titleword {
+                font-family: Microsoft YaHei;
+                font-weight: bold;
+                font-size: 24px;
+                color: #1F1F1F;
+                margin-left: 8px;
+            }
+        }
+
+        .titleright {
+            display: flex;
+
+            .changebox {
+                cursor: pointer;
+                padding: 0 28px;
+                height: 32px;
+                line-height: 32px;
+                border-radius: 16px;
+                border: 1px solid #BEBEBE;
+                font-family: Microsoft YaHei;
+                font-weight: 300;
+                font-size: 16px;
+                color: #BBBBBB;
+                margin-right: 16px;
+
+                &:last-child {
+                    margin-right: 0
+                }
+            }
+
+            .checkbox {
+                border: none;
+                background: #347AF0;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .eventleft {
+        width: 1114px;
+
+        .eventteams {
+            width: 1114px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .datebox {
+                padding-left: 28px;
+                width: 158px;
+                height: 30px;
+                line-height: 30px;
+                background: url(@/assets/images/csgoCab/titlebox.png) no-repeat;
+                background-size: cover;
+                font-family: Microsoft YaHei;
+                font-weight: bold;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
+
+            .onedayteam {
+                width: 1114px;
+                height: 130px;
+                padding: 0 6px 0 2px;
+                background-color: #fff;
+
+                .onedaybox {
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 0 0 20px;
+                    display: flex;
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    .time {
+                        height: 100%;
+                        font-size: 16px;
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 26px;
+
+                        .realtime {
+                            font-family: Microsoft YaHei;
+                            font-weight: bold;
+                            font-size: 32px;
+                            color: #1F1F1F;
+                            line-height: 44px;
+                        }
+
+                        .realstate {
+                            font-weight: bold;
+                            font-size: 15px;
+                            color: #1F1F1F;
+                        }
+                    }
+
+                    .where {
+                        cursor: pointer;
+                        height: 100%;
+                        width: 208px;
+                        line-height: 130px;
+                        margin-right: 12px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #1F1F1F;
+
+                        &:hover {
+                            color: #347AF0;
+                        }
+                    }
+
+                    .teamnums {
+                        height: 100%;
+                        display: flex;
+
+                        .team1 {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+
+                            .teamname {
+                                width: 106px;
+                                text-align: right;
+                                margin-right: 12px;
+                                font-weight: bold;
+                                font-size: 16px;
+                                color: #1F1F1F;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                cursor: pointer;
+
+                                &:hover {
+                                    color: #347AF0;
+                                }
+                            }
+
+                            .teamlogo {
+                                cursor: pointer;
+                                display: block;
+                                width: 60px;
+                                height: 60px;
+                            }
+                        }
+
+                        .numbers {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            margin: 0 28px;
+                            font-family: Microsoft YaHei;
+                            font-weight: bold;
+                            font-size: 46px;
+                            color: #1F1F1F;
+                        }
+
+                        .team2 {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+
+                            .teamname {
+                                cursor: pointer;
+                                width: 106px;
+                                margin-left: 12px;
+                                font-weight: bold;
+                                font-size: 16px;
+                                color: #1F1F1F;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+
+                                &:hover {
+                                    color: #347AF0;
+                                }
+                            }
+
+                            .teamlogo {
+                                cursor: pointer;
+                                display: block;
+                                width: 60px;
+                                height: 60px;
+                            }
+                        }
+                    }
+
+                    .eventstate {
+                        width: 158px;
+                        height: 100%;
+                        margin-left: 30px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        div {
+                            cursor: pointer;
+                            font-family: Microsoft YaHei;
+                            font-weight: 400;
+                            font-size: 14px;
+                            text-align: center;
+                            width: 71px;
+                            height: 24px;
+                            line-height: 25px;
+                        }
+
+                        .stateboxl {
+                            background: url(@/assets/images/csgoCab/waitl.png) no-repeat;
+                            background-size: cover;
+                            color: #fff;
+                        }
+
+                        .stateboxr {
+                            background: url(@/assets/images/csgoCab/waitr.png) no-repeat;
+                            background-size: cover;
+                            color: #347AF0;
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+
+        .lookmore {
+            cursor: pointer;
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            background: #DFDFDF;
+            font-family: Microsoft YaHei;
+            font-weight: 300;
+            font-size: 14px;
+            color: #595959;
+
+            &:hover {
+                color: #347AF0;
+            }
+        }
+    }
+
+    .eventright {
+        width: 260px;
+
+        .comehead {
+            width: 100%;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background: #347AF0;
+            border-radius: 5px 5px 0 0;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+        .comebody {
+            padding: 2px 12px 6px 12px;
+            background: #FFFFFF;
+            border-radius: 0 0 5px 5px;
+
+            .onecome {
+                cursor: pointer;
+                width: 100%;
+                height: 44px;
+                border-bottom: 1px solid #D1D1D1;
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    .comeinfo {
+                        color: #347AF0 !important;
+                    }
+                }
+
+                &:last-child {
+                    border: none;
+                }
+
+                img {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 2px;
+                }
+
+                .comeinfo {
+                    flex: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: #121212;
+                    font-family: MicrosoftYaHei;
+                    align-items: center;
+
+                    .comename {
+                        height: 44px;
+                        width: 110px;
+                        line-height: 44px;
+
+
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+            }
+        }
+
+        .commtitle {
+            margin-bottom: 30px;
+        }
+
+        .willcome {
+            width: 260px;
+            margin-bottom: 24px;
+
+        }
+
+        .gameover {
+            width: 260px;
+            margin-bottom: 66px;
+
+            .comehead {
+                background: #BEBEBE;
+            }
+
+        }
+
+        .ranking {
+            width: 260px;
+
+            .rankbody {
+
+                background-color: #fff;
+                padding: 0 4px 4px 4px;
+
+                .posr {
+                    width: 100%;
+                    position: relative;
+                    height: 24px;
+
+                    .moreteam {
+                        display: block;
+                        width: 53px;
+                        height: 21px;
+                        border: 1px solid #ebedf1;
+                        text-align: center;
+                        line-height: 21px;
+                        font-size: 12px;
+                        color: #999;
+                        background: rgba(252, 253, 254, 1);
+                        position: relative;
+                        top: 6px;
+                        right: 0.5px;
+                        background-color: #fcfdfe;
+                        border-bottom-color: #fcfdfe;
+                        border-left: none;
+                        float: right;
+
+                    }
+
+                    i {
+                        position: absolute;
+                        width: 8px;
+                        height: 24px;
+                        background: url(@/assets/images/csgoCab/sanjiao.png) no-repeat;
+                        bottom: -1px;
+                        right: 53px;
+                        border-bottom: 1px solid #fcfdfe;
+                    }
+                }
+
+                .rankone {
+                    width: 252px;
+                    padding: 0 14px 0 10px;
+                    height: 48px;
+                    background: rgba(252, 253, 254, 1);
+                    border: 1px solid rgba(235, 237, 241, 1);
+                    border-bottom: 0;
+                    border-radius: 3px;
+
+                    &:last-child {
+                        border-bottom: 1px solid rgba(235, 237, 241, 1);
+                    }
+
+                    .num {
+                        width: 42px;
+                        height: 16px;
+                        background: linear-gradient(90deg, rgba(207, 211, 219, 1), rgba(194, 199, 209, 1));
+                        border-radius: 3px;
+                        font-size: 12px;
+                        font-family: Industry-Bold;
+                        font-weight: 700;
+                        font-style: italic;
+                        color: rgba(255, 255, 255, 1);
+                        line-height: 16px;
+                        text-align: center;
+                        margin-top: 18px;
+                        float: left;
+                    }
+
+                    .fortnum {
+                        background: linear-gradient(90deg, rgba(255, 168, 0, 1), rgba(255, 206, 56, 1));
+                    }
+
+                    .teams {
+                        margin-left: 22px;
+                        margin-top: 8px;
+                        float: left;
+
+                        a {
+                            display: inline-block;
+                            font-size: 14px;
+                            color: #666;
+                            height: 28px;
+                            line-height: 28px;
+
+                            &:hover {
+                                color: #347AF0;
+                            }
+
+                            .logos {
+                                width: 28px;
+                                height: 28px;
+                                overflow: hidden;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+
+                            img {
+                                vertical-align: middle;
+                                height: 28px;
+                                width: auto;
+                            }
+
+                            .teamname {
+                                font-weight: bold;
+                                margin-left: 12px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .inter {
+                        float: right;
+                        height: 26px;
+                        line-height: 26px;
+                        margin-top: 12px;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: rgba(51, 51, 51, 1);
+                    }
+                }
+            }
+        }
+    }
+
+}

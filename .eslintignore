@@ -1,0 +1,6 @@
+/node_modules/
+/public/
+.vscode
+.idea
+src/type/auto-import.d.ts
+src/type/components.d.ts

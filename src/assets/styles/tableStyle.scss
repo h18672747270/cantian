@@ -1,0 +1,46 @@
+
+//控制table行是否高亮
+  .tableRowHighlightColor {
+    .el-table {
+      --el-table-row-hover-bg-color: transparent!important;
+    }
+  }
+//暗色table样式
+.dark-custom-table-container {
+  .el-table__header-wrapper .el-table__header tr th{
+    background: linear-gradient(to bottom, #0b2344 0%, #091c38 100%) !important;
+  }
+
+  .el-table tr:nth-child(odd) {
+    background: rgba(12, 33, 62, 1);
+  }
+
+  .el-table tr:nth-child(even) {
+    background: rgba(5, 18, 36, 1);
+  }
+  .el-table {
+    --el-table-border-color: rgba(30, 56, 92, 1);
+    --el-table-row-hover-bg-color: #193153;
+  }
+}
+
+.black-custom-table-container{
+  .el-table__header-wrapper .el-table__header tr th{
+    background: #343438;
+  }
+
+  .el-table tr {
+    background: #1e1e22;
+  }
+
+  .el-table {
+    --el-table-row-hover-bg-color: #193153;
+    --el-table-text-color:#999;
+    --el-table-border-color: #3c3c3c;
+  }
+}
+
+
+
+
+

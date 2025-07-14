@@ -1,0 +1,283 @@
+.hotdot {
+    width: 1404px;
+    height: 490px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .hotlist {
+      height: 490px;
+      width: 546px;
+      display: flex;
+      flex-flow: column;
+
+      &_head {
+
+        height: 36px;
+        width: 546px;
+
+        display: flex;
+        justify-content: space-between;
+
+        .newstabs {
+          background: #adc3e7;
+          cursor: pointer;
+          height: 100%;
+          flex: 1;
+          text-align: center;
+          line-height: 36px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          font-size: 14px;
+          color: #FFFFFF;
+          position: relative;
+          transition: .2s all;
+
+          &:hover {
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 12px;
+            background: #fff;
+            border-radius: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto 0;
+          }
+
+          &:first-child {
+            border-radius: 9px 0 0 0;
+          }
+
+          &:last-child {
+            border-radius: 0 9px 0 0;
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+
+        .checktab {
+          background-color: #347AF0;
+
+          &::before {
+            display: none;
+          }
+        }
+        .nobefore{
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &_body {
+        width: 100%;
+        flex: 1;
+        background: #FAFAFA;
+        border-radius: 0 0 9px 9px;
+        padding: 24px 40px 0 46px;
+        overflow: hidden;
+
+        .newsbox {
+          margin-bottom: 22px;
+
+          .firsttilte {
+            cursor: pointer;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            font-size: 24px;
+            color: #347AF0;
+            margin-bottom: 6px;
+            width: 390px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          .titlebox {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .othertitle {
+              cursor: pointer;
+              height: 18px;
+              margin-left: 2px;
+              display: flex;
+              justify-content: space-between;
+
+              &:hover {
+                color: #347AF0 !important;
+
+                .titleword {
+                  color: #347AF0 !important;
+                }
+                .titletime {
+                  color: #347AF0 !important;
+                }
+              }
+
+              .titleleft {
+                display: flex;
+                align-items: center;
+
+                .titlepoint {
+                  width: 4px;
+                  height: 4px;
+                  margin-right: 6px;
+                  background: #575757;
+                  border-radius: 50%;
+                }
+
+                .svg-icon {
+                  position: relative;
+                  top: -1px;
+                  font-size: 24px;
+                }
+
+                .titleword {
+                  font-family: Microsoft YaHei;
+                  font-weight: 400;
+                  font-size: 14px;
+                  color: #585858;
+                  width: 280px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+
+                }
+
+               
+              }
+              .titletime {
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                font-size: 14px;
+                color: #585858;
+
+              }
+            }
+          }
+
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      &_foot {
+        cursor: pointer;
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background: #D5D5D5;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+
+        &:hover {
+          background-color: #347AF0;
+        }
+      }
+    }
+
+    .hotimg {
+      width: 834px;
+      height: 100%;
+
+      .imgbox {
+        width: 100%;
+        height: 436px;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 436px;
+          display: block;
+          cursor: pointer;
+          opacity: 0;
+          visibility: hidden;
+          transition: .2s all;
+          &:nth-child(2){
+            scale: 1.2;
+          }
+          &:hover {
+            transform: scale(1.2)
+          }
+        }
+
+        .activehotimg {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .changeimg {
+        display: flex;
+        justify-content: space-between;
+        height: 54px;
+        width: 100%;
+
+        .hotimgtitle {
+          width: 25%;
+          height: 54px;
+          text-align: center;
+          line-height: 54px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          font-size: 16px;
+          background-color: #424242;
+          color: #BFBFBF;
+          position: relative;
+          cursor: pointer;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 28px;
+            background: #5a5a5a;
+            border-radius: 0;
+            top: 16px;
+            right: 0;
+          }
+
+          &:hover {
+            background-color: #347AF0;
+            color: #fff;
+
+          }
+        }
+
+        .hotactive {
+          background-color: #347AF0;
+          color: #fff;
+          &:before{
+            display: none;
+                        }
+        }
+        .beforenone{
+          &:before{
+            display: none;
+                        }
+        }
+      }
+    }
+  }

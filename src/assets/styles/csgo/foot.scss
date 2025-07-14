@@ -1,0 +1,187 @@
+.footboss {
+    width: 100%;
+    @keyframes showmodal {
+        0% {
+            opacity: 0;
+            top: 50px;
+        }
+        100% {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    .footbox {
+
+        width: 100%;
+
+        background: #232225;
+
+        .footinfo {
+    opacity: 0;
+            position: relative;
+            width: 1320px;
+            height: 258px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: showmodal ease 1s forwards;
+            .guide {
+                float: left;
+                height: 100%;
+                box-sizing: border-box;
+                padding-top: 39px;
+                position: relative;
+
+                &:first-child {
+                    width: 398px;
+                }
+
+                &:nth-last-of-type(2) {
+                    width: 701px;
+                    padding-left: 55px;
+                    padding-right: 55px;
+                }
+
+                &:last-child {
+                    width: 221px;
+                    padding-left: 55px;
+
+                    &:after {
+                        width: 0;
+                    }
+
+                    .appimg {
+                        position: absolute;
+                        top: 89px;
+                        left: 92px;
+                        width: 103px;
+                        height: 104px;
+
+                    }
+                }
+
+                &:after {
+                    width: 0.5px;
+                    height: 149px;
+                    background: rgba(236, 236, 236, .5);
+                    content: '';
+                    right: 0;
+                    top: 45px;
+                    position: absolute;
+                }
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                    vertical-align: middle;
+                    border: 0;
+
+                }
+
+                .tex1 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-left: 8px;
+                    vertical-align: middle;
+                }
+
+                .wordbox {
+                    margin-top: 30px;
+
+                    .guid-herf {
+                        width: 94px;
+                        display: inline-block;
+                        height: 14px;
+                        line-height: 14px;
+                        margin-bottom: 26px;
+
+                        a {
+                            font-size: 14px;
+                            font-family: PingFang;
+                            font-weight: 700;
+                            color: #9F9F9F;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .swpper {
+                    margin-top: 30px;
+                    height: 90px;
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        height: 60px;
+                    }
+
+                    .n-carousel__dots {
+                        bottom: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .footdown {
+        padding: 35px 0 103px;
+        width: 100%;
+        background: #1F1E21;
+        font-size: 12px;
+        font-family: PingFang;
+        font-weight: 400;
+        color: #666;
+        a {
+            text-decoration: none;
+            color: #666;
+
+        }
+       
+        .footwords {
+            width: 1086px;
+            margin: 0 auto;
+
+            .link {
+                text-align: center;
+                width: 100%;
+                padding-top: 0;
+                margin-top: 0;
+
+                li {
+                    padding: 0 34px;
+                    display: inline-block;
+                    border-left: 1px solid rgba(255, 255, 255, .15);
+
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+                    &:hover{
+                       a{
+                        color: #db4437;
+                       } 
+                    }
+                }
+            }
+
+            .marp {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .blank {
+                display: inline-block;
+                margin-left: 15px;
+                height: 20px;
+                &:hover{
+                    filter: brightness(130%);
+                }
+            }
+        }
+    }
+}

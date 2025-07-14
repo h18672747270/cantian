@@ -1,0 +1,65 @@
+.runner_tags: &runner_tags
+  tags:
+    - rancher
+variables:
+  GIT_DEPTH: "0"
+# 定义 CI/CD 管道的不同阶段
+stages:
+  - build  # 构建阶段
+  - notify   # 推送阶段
+
+# 构建阶段
+build-job-tag:
+  stage: build  # 指定阶段为 build
+  tags:
+    - rancher
+  rules:
+  # #   # - tags
+   - if: $CI_COMMIT_TAG 
+  image: docker:latest  # 使用 Docker 镜像进行构建
+  services:
+    - docker:dind  # 使用 Docker in Docker 服务
+  before_script:
+    - echo $CI_COMMIT_TAG 
+    - rm -rf $(git rev-parse --git-dir)/shallow  # 删除浅克隆文件
+    # 登录到 Harbor 镜像仓库
+    - mkdir -p $HOME/.docker
+    - echo "{\"auths\":{\"$HARBOR_REGISTRY\":{\"username\":\"$HARBOR_USERNAME\",\"password\":\"$HARBOR_PASSWORD\"}}}" > $HOME/.docker/config.json
+  script:
+    - BUILD_ARG=${CI_COMMIT_TAG%%.*}
+    - echo $BUILD_ARG
+    - docker build --build-arg NPM_BUILD_TARGET="$BUILD_ARG" -t 8.148.24.60:85/ct_web/pt:$CI_COMMIT_TAG .
+    - echo Harbor12345 |docker login 8.148.24.60:85 -u admin --password-stdin
+    - docker push 8.148.24.60:85/ct_web/pt:$CI_COMMIT_TAG
+    - export IMAGE_SHA=$(docker inspect --format='{{index .RepoDigests 0}}' $DOCKER_IMAGE:$CI_COMMIT_TAG | cut -d'@' -f2)
+
+
+
+send_dingtalk_notification:
+  stage: notify
+  tags:
+    - rancher
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - |
+      DINGTALK_WEBHOOK_URL="https://oapi.dingtalk.com/robot/send?access_token=185c5a7d6f8eb2491d5770265b85b29d2b63bb82196bf388d62cdd4a64f9f5b4"
+      # 构造消息内容，这里使用 JSON 格式
+      # 构造 UTF-8 编码的文本消息内容
+      OPERATOR="$GITLAB_USER_NAME"
+      BUILD_ARG=${CI_COMMIT_TAG%%.*}
+      MESSAGE=$(cat <<-EOF
+      {
+        "msgtype": "text",
+        "text": {
+            "content": "CI/CD 前端平台部署已完成。\n项目仓库链接: 8.148.24.60:85/ct_web/pt:$CI_COMMIT_TAG\n当前标签: $CI_COMMIT_TAG\n操作人: $OPERATOR\nBUILD对象=$BUILD_ARG"
+        }
+      }
+      EOF
+      )
+
+      
+      # 使用 curl 发送 POST 请求到钉钉机器人的 Webhook URL
+      curl -X POST $DINGTALK_WEBHOOK_URL \
+        -H "Content-Type: application/json" \
+        -d "$MESSAGE"

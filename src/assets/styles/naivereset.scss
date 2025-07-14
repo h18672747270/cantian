@@ -1,0 +1,31 @@
+/*
+ * @Author: Wuzl
+ * @Date: 2024-07-04 14:09:09
+ * @Description: naive样式重写
+ */
+.n-message {
+  align-content: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding:10px 12px;
+
+  .n-message__icon {
+    font-size: 22px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .n-message__icon>* {
+    position: static;
+  }
+
+  .n-message__content {
+    font-size: 14px;
+  }
+}
+
+.n-modal-mask {
+  background-color: rgba(0, 0, 0, .6);
+}

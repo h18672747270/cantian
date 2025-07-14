@@ -1,0 +1,259 @@
+.headbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 84px;
+    width: 100vw;
+    background-color: #1e1e20;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 272px;
+    padding-right: 260px;
+  
+    img {
+      border: none;
+      vertical-align: middle;
+    }
+  
+    &_left {
+      width: 185px;
+      height: 100%;
+      margin-right: 46px;
+      position: relative;
+  
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 185px;
+        height: 40px;
+        cursor: pointer;
+  
+        img {
+          width: 185px;
+          height: 40px;
+        }
+      }
+    }
+  
+    &_center {
+      flex: 1;
+      height: 100%;
+      display: flex;
+  
+      .hoverpopo {
+        color: #fff !important;
+  
+        .showbtn {
+          border-color: #fff transparent transparent !important;
+          transform: rotateZ(180deg);
+        }
+      }
+  
+      .navitem {
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: PingFang;
+        font-weight: 700;
+        color: #5d5d5d;
+        line-height: 84px;
+        transition: all linear 0.2s;
+        position: relative;
+        padding: 0 24px;
+        white-space: nowrap;
+        font-family: MicrosoftYaHei;
+        font-style: normal;
+  &:last-child{
+    margin-left: 20px;
+  }
+        &:hover {
+          color: #fff;
+  
+          .showbtn {
+            border-color: #fff transparent transparent;
+            transform: rotateZ(180deg);
+          }
+  
+          .dropdown {
+            display: block;
+            opacity: 1;
+          }
+        }
+  
+        .showbtn {
+          color: #fff;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 5px 0;
+          border-color: #5d5d5d transparent transparent;
+          position: relative;
+          top: -2px;
+          margin-left: 10px;
+          transition: all 0.2s;
+        }
+  
+        .dropdown {
+          width: 160px;
+          background: #0a0a0b;
+          border-radius: 6px;
+          font-size: 13px;
+          position: absolute;
+          top: 62px;
+          left: 0px;
+          display: none;
+          transition: all 0.2s;
+          opacity: 0;
+  
+          &:before {
+            color: #fff;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 5px;
+            border-color: transparent transparent #0a0a0b;
+            position: absolute;
+            top: -4px;
+            content: '';
+            left: 70px;
+          }
+  
+          &_item {
+            width: 100%;
+            height: 52px;
+            text-align: left;
+            text-indent: 29px;
+            cursor: pointer;
+            line-height: 52px;
+            transition: all linear 0.2s;
+            color: #fff;
+            display: block;
+  
+            &:hover {
+              color: #347af0;
+            }
+          }
+        }
+  
+        .moretar {
+          width: 210px;
+          height: 230px;
+          left:-14px;
+          &:before {
+            left: 84px;
+          }
+          a {
+            display: block;
+            float: left;
+            width: 105px;
+            height: 46px;
+            line-height: 46px;
+            text-align: left;
+            color: #aaa;
+            text-indent: 28px;
+            position: relative;
+          }
+        }
+      }
+  
+      .event-data {
+        position: relative;
+  
+        .hot {
+          image-rendering: pixelated;
+          position: absolute;
+          top: 28px;
+          left: 74px;
+          width: 26px;
+          height: 17px;
+          margin-left: 50%;
+        }
+      }
+    }
+  
+    &_right {
+      display: flex;
+      align-items: center;
+      width: 290px;
+      height: 100%;
+  
+      .down {
+        cursor: pointer;
+        display: block;
+        width: 84px;
+        font-size: 12px;
+        font-family: PingFang;
+        color: #aaa;
+        margin: 0 30px;
+        line-height: 28px;
+        font-weight: 400;
+        position: relative;
+        transition: color 0.2s;
+  
+        .iphoneimg {
+          display: inline-block;
+          width: 13px;
+          height: 19px;
+          background: url(@/assets/images/csgoCab/appphone.png)
+            no-repeat;
+            background-size: contain;
+          transition: 0.2s;
+          position: relative;
+          top: 5px;
+        }
+  
+        &:before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 20px;
+          background: #fff;
+          opacity: 0.15;
+          border-radius: 0;
+          top: 6px;
+          right: -30px;
+        }
+  
+        &:hover {
+          color: #fff;
+        }
+      }
+  
+      .info {
+        margin-left: 20px;
+        display: flex;
+  
+        a {
+          height: 30px;
+          font-family: PingFang;
+          width: 120px;
+          font-size: 14px;
+          line-height: 30px;
+          display: inline-block;
+          cursor: pointer;
+  
+          &:first-child {
+            text-align: center;
+            font-weight: 700;
+            color: #347af0;
+          }
+  
+          &:last-child {
+            margin-right: 10px;
+            transition: 0.3s;
+            font-weight: 700;
+            color: #fff;
+  
+            &:hover {
+              color: #347af0;
+            }
+          }
+        }
+      }
+    }
+  }

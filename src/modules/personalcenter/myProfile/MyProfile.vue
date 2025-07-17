@@ -133,7 +133,7 @@ import {
   selectAllHeadPortraitLists,
   selectUserInfoDetail,
   updateUserInfoCreate,
-} from '@/api/personalcenter/myprofile'
+} from '../../../api/personalCenter/myprofile'
 import fivep from '@/assets/images/csgoCab/fivep.png'
 import firstp from '@/assets/images/csgoCab/firstp.png'
 import fourp from '@/assets/images/csgoCab/fourp.png'

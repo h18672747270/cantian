@@ -1,4 +1,4 @@
-name: Deploy Vue App
+name: Deploy Sandbox Build
 
 on:
   push:
@@ -20,10 +20,10 @@ jobs:
       - name: 安装 pnpm
         run: npm install -g pnpm
 
-      - name: 安装依赖 & 构建
+      - name: 安装依赖 & 构建 sandbox
         run: |
           pnpm install
-          pnpm run build
+          pnpm run build:sandbox
 
       - name: 上传构建产物到服务器
         uses: appleboy/scp-action@v0.1.3

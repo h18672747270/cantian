@@ -2,7 +2,7 @@ name: Deploy Vue App
 
 on:
   push:
-    branches: [main]  # 或 master，看你的默认分支
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -12,10 +12,18 @@ jobs:
       - name: 拉取代码
         uses: actions/checkout@v3
 
-      - name: 安装依赖 & 构建项目
+      - name: 安装 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 安装 pnpm
+        run: npm install -g pnpm
+
+      - name: 安装依赖 & 构建
         run: |
-          npm install
-          npm run build  # 确保你的 package.json 里有 build 脚本
+          pnpm install
+          pnpm run build
 
       - name: 上传构建产物到服务器
         uses: appleboy/scp-action@v0.1.3

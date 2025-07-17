@@ -1,0 +1,36 @@
+name: Deploy Vue App
+
+on:
+  push:
+    branches: [main]  # 或 master，看你的默认分支
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+
+      - name: 安装依赖 & 构建项目
+        run: |
+          npm install
+          npm run build  # 确保你的 package.json 里有 build 脚本
+
+      - name: 上传构建产物到服务器
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "dist/*"
+          target: "/workspace/dist"
+
+      - name: 重启 Nginx
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            systemctl restart nginx

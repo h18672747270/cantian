@@ -1,15 +1,17 @@
-# cantian后台管理系统
+# cantian 后台管理系统
 
 #### 介绍
-cantian后台管理系统是一个支持单页面的vue3项目
+
+cantian 后台管理系统是一个支持单页面的 vue3 项目
 
 #### 软件架构
-## Vite + Vue3 + Typescript + Tailwindcss + pinia
 
+## Vite + Vue3 + Typescript + Tailwindcss + pinia
 
 #### 安装教程
 
 - 安装依赖
+
 ```
 npm i
 ```
@@ -21,6 +23,7 @@ npm dev
 ```
 
 - 打包
+
 ```
 npm build
 ```
@@ -41,4 +44,5 @@ npm build
  |   |-- views  页面
          |-- index.html 首页
  |   |-- utils  工具函数
+ cicd
 ```

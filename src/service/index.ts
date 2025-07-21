@@ -8,7 +8,7 @@ commmonInit()
 const envMode: string = import.meta.env.MODE
 const baseUrlMap: any = {
   dev: 'http://192.168.2.245:30293/',
-  sandbox: 'http://192.168.2.245:32539',
+  sandbox: 'http://8.148.237.148',
   prod: 'http://8.148.25.172:30730',
 }
 const baseURL: any = baseUrlMap[envMode]

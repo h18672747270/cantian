@@ -17,25 +17,25 @@ jobs:
           npm install
           npm run build
 
-      # 删除服务器上 /workspace/dist 目录下所有文件，保证完全替换
-      - name: 清空服务器 /workspace/dist 目录内容
+      # 删除服务器上的 /workspace/dist 目录，保证完全替换
+      - name: 删除服务器上的 /workspace/dist 文件夹
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SERVER_IP }}
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            rm -rf /workspace/dist/*
+            rm -rf /workspace/dist
 
-      # 上传本地 dist 目录所有文件到服务器 /workspace/dist
-      - name: 上传 dist 目录到服务器 /workspace/dist
+      # 上传本地整个 dist 文件夹到服务器 /workspace 下
+      - name: 上传本地 dist 文件夹到服务器 /workspace
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.SERVER_IP }}
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: 'dist/*'
-          target: '/workspace/dist'
+          source: 'dist'
+          target: '/workspace'
 
       # 重启 nginx
       - name: 重启 Nginx

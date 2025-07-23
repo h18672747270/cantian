@@ -13,7 +13,7 @@
     host: ${{ secrets.SERVER_IP }}
     username: root
     key: ${{ secrets.SERVER_SSH_KEY }}
-    source: 'dist/*'
+    source: 'dist'
     target: '/workspace'
 
 - name: 重启 Nginx

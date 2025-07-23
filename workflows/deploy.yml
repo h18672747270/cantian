@@ -1,26 +1,2 @@
-- name: 清空服务器 /workspace 目录内容
-  uses: appleboy/ssh-action@v0.1.6
-  with:
-    host: ${{ secrets.SERVER_IP }}
-    username: root
-    key: ${{ secrets.SERVER_SSH_KEY }}
-    script: |
-      rm -rf /workspace/*
-
-- name: 上传 dist 文件夹内容到服务器 /workspace
-  uses: appleboy/scp-action@v0.1.3
-  with:
-    host: ${{ secrets.SERVER_IP }}
-    username: root
-    key: ${{ secrets.SERVER_SSH_KEY }}
-    source: 'dist'
-    target: '/workspace'
-
-- name: 重启 Nginx
-  uses: appleboy/ssh-action@v0.1.6
-  with:
-    host: ${{ secrets.SERVER_IP }}
-    username: root
-    key: ${{ secrets.SERVER_SSH_KEY }}
-    script: |
-      systemctl restart nginx
+# 这个文件已被禁用，请使用 Docker 部署方式
+# 参考 DOCKER.md 文档进行部署

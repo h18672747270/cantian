@@ -23,7 +23,7 @@ jobs:
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: 'dist/*'
-          target: '/workspace/dist'
+          target: '/workspace'
 
       - name: 重启 Nginx
         uses: appleboy/ssh-action@v0.1.6
